@@ -224,15 +224,10 @@ class GeographyResult(dict):
         # create float coordinate tuples
         for geolist in self.values():
             for geo in geolist:
-                try:
                     geo['CENT'] = float(geo['CENTLON']), float(geo['CENTLAT'])
-                except ValueError:
-                    geo['CENT'] = ()
 
-                try:
                     geo['INTPT'] = float(geo['INTPTLON']), float(geo['INTPTLAT'])
-                except ValueError:
-                    geo['INTPT'] = ()
+
 
 
 class AddressResult(list):
